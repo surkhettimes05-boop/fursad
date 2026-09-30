@@ -24,3 +24,21 @@ When the final custom domain is connected, replace `https://fursad-blue.vercel.a
 ## Brand ownership
 
 Public-facing Pasalho ownership references are intentionally removed from this consumer site. Keep legal ownership disclosures only where required by applicable law, packaging, invoices, or regulatory documents.
+
+
+## Admin CMS
+
+The private admin interface lives at `/admin/`.
+
+Before publishing can work, configure these Vercel environment variables:
+
+- `ADMIN_PASSWORD` — a strong private password for the admin panel.
+- `GITHUB_TOKEN` — a GitHub token with write permission to this repository.
+- `GITHUB_REPO` — optional; defaults to `surkhettimes05-boop/fursad`.
+- `GITHUB_BRANCH` — optional; defaults to `main`.
+
+The browser never receives the GitHub token. Admin writes go through the Vercel function at `/api/admin`.
+
+Managed content is stored in `data/content.json`. Publishing creates a GitHub commit, which triggers the normal Vercel deployment. Media uploads are limited to 3 MB and are stored in `assets/uploads/`.
+
+Do not put `ADMIN_PASSWORD` or `GITHUB_TOKEN` into committed HTML, JavaScript, or environment files.
