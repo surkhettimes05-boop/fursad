@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FURSAD Admin</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<div class="login-shell" id="loginShell">
+  <form class="login-card" id="loginForm">
+    <img src="/assets/logo.svg" alt="FURSAD">
+    <p class="eyebrow">PRIVATE CMS</p>
+    <h1>FURSAD Admin</h1>
+    <p>Manage offers, photos, customer reviews, partners and website settings.</p>
+    <label>Admin password<input id="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn primary" type="submit">Sign in</button>
+    <p class="status" id="loginStatus"></p>
+  </form>
+</div>
+<div class="admin-shell" id="adminShell" hidden>
+  <aside class="sidebar">
+    <a class="admin-brand" href="/" target="_blank" rel="noopener"><img src="/assets/logo.svg" alt="FURSAD"></a>
+    <button class="nav-item active" data-view="dashboard">Dashboard</button>
+    <button class="nav-item" data-view="offers">Offers</button>
+    <button class="nav-item" data-view="media">Media</button>
+    <button class="nav-item" data-view="reviews">Reviews</button>
+    <button class="nav-item" data-view="partners">Partners</button>
+    <button class="nav-item" data-view="settings">Settings</button>
+    <div class="sidebar-bottom"><a class="nav-link" href="/" target="_blank" rel="noopener">View website ↗</a><button class="nav-item" id="logoutBtn">Sign out</button></div>
+  </aside>
+  <main class="workspace">
+    <header class="topbar">
+      <div><p class="eyebrow">FURSAD CONTENT SYSTEM</p><h1 id="viewTitle">Dashboard</h1></div>
+      <div class="top-actions"><span class="save-state" id="saveState">Saved</span><button class="btn primary" id="publishBtn">Publish changes</button></div>
+    </header>
+    <section class="view active" data-panel="dashboard"><div class="stats" id="stats"></div><div class="panel"><h2>Publishing</h2><p>Changes stay in this browser until you publish. Publishing commits the content file to GitHub and triggers the normal Vercel deployment.</p></div></section>
+    <section class="view" data-panel="offers"><div class="section-head"><div><h2>Offers</h2><p>Create temporary promotions and campaigns.</p></div><button class="btn" data-add="offers">+ Add offer</button></div><div class="editor-list" id="offersList"></div></section>
+    <section class="view" data-panel="media"><div class="section-head"><div><h2>Media library</h2><p>Upload product and campaign media.</p></div></div><div class="upload-card"><input id="mediaFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,video/mp4"><button class="btn" id="uploadBtn">Upload file</button><span class="status" id="uploadStatus">Max 3 MB.</span></div><div class="media-grid" id="mediaList"></div></section>
+    <section class="view" data-panel="reviews"><div class="section-head"><div><h2>Customer reviews</h2><p>Only approved reviews appear publicly.</p></div><button class="btn" data-add="reviews">+ Add review</button></div><div class="editor-list" id="reviewsList"></div></section>
+    <section class="view" data-panel="partners"><div class="section-head"><div><h2>Partners</h2><p>Add retail, distribution or campaign partners.</p></div><button class="btn" data-add="partners">+ Add partner</button></div><div class="editor-list" id="partnersList"></div></section>
+    <section class="view" data-panel="settings"><div class="panel form-grid">
+      <label>WhatsApp number<input data-setting="whatsappNumber" placeholder="97798XXXXXXXX"></label>
+      <label>Business email<input data-setting="businessEmail" type="email" placeholder="hello@example.com"></label>
+      <label>Product name<input data-setting="productName"></label>
+      <label>MRP<input data-setting="mrp" placeholder="Rs 20"></label>
+      <label>Pack size<input data-setting="packSize" placeholder="Target ~60g"></label>
+      <label>Hero image path<input data-setting="heroImage"></label>
+      <label>Packaging image path<input data-setting="packagingImage"></label>
+    </div></section>
+  </main>
+</div>
+<script src="/admin/admin.js"></script>
+</body>
+</html>
