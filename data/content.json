@@ -1,0 +1,15 @@
+{
+  "offers": [],
+  "partners": [],
+  "reviews": [],
+  "media": [],
+  "settings": {
+    "whatsappNumber": "",
+    "businessEmail": "",
+    "productName": "FURSAD Crunchy Tea Cracker",
+    "mrp": "Rs 20",
+    "packSize": "Target ~60g",
+    "heroImage": "/assets/fursad-hero.webp",
+    "packagingImage": "/assets/fursad-packaging.webp"
+  }
+}
