@@ -42,3 +42,20 @@
 @media(max-width:1050px){.quality-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.status-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.pack-proof-grid{grid-template-columns:1fr 1fr}.proof-copy-card{grid-column:1/-1}.section-heading-row{grid-template-columns:1fr;gap:12px}}
 @media(max-width:900px){.answer-grid{max-width:none}.pack-window{height:380px}.standard-steps{grid-template-columns:1fr}.buy-grid{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr 1fr}.path-card{padding:28px}}
 @media(max-width:560px){body{padding-bottom:68px}.conversion-hero{padding-top:28px}.hero-copy{font-size:1rem}.english-copy{font-size:.92rem}.answer-grid{grid-template-columns:1fr;gap:8px}.answer-wide{grid-column:auto}.answer-item{padding:12px}.hero-actions{gap:9px;margin-top:22px}.hero-actions .button,.path-card .button{width:100%;min-height:52px;padding:14px 16px}.image-proof-label{align-items:flex-start;flex-direction:column}.image-proof-label span{text-align:left}.pack-proof-grid{grid-template-columns:1fr}.pack-window{height:340px}.proof-copy-card{grid-column:auto;padding:24px}.quality-grid{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr}.path-card{padding:24px;border-radius:22px}.whatsapp{display:none}.mobile-conversion-bar{position:fixed;display:grid;grid-template-columns:1fr 1fr;gap:8px;left:0;right:0;bottom:0;z-index:80;padding:9px 10px calc(9px + env(safe-area-inset-bottom));background:rgba(255,253,248,.96);border-top:1px solid var(--line);backdrop-filter:blur(16px)}.mobile-conversion-bar a{display:flex;min-height:48px;align-items:center;justify-content:center;border-radius:12px;background:var(--ink);color:#fff;font-size:.84rem;font-weight:850;text-align:center;padding:8px}.mobile-conversion-bar a:last-child{background:var(--orange)}}
+
+/* FURSAD v2: price prominence + chiya fit + tasting profile */
+.hero-offer{display:flex;gap:10px;margin:18px 0 20px;max-width:430px}
+.hero-offer>div{flex:1;padding:16px 18px;border-radius:18px;background:var(--ink);color:#fff;box-shadow:0 12px 30px rgba(56,33,23,.1)}
+.hero-offer span{display:block;margin-bottom:4px;color:#d6cdc7;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.hero-offer strong{display:block;font-size:clamp(1.5rem,3vw,2.15rem);line-height:1;color:#fff}
+.chiya-fit{background:#fffdf8}
+.chiya-reasons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.chiya-reason{padding:30px 26px;border:1px solid var(--line);border-radius:22px;background:#fff}
+.chiya-reason>span{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--cream);color:var(--orange);font-weight:850;margin-bottom:34px}
+.chiya-reason h3{font-size:1.22rem;line-height:1.2;margin:0 0 10px}.chiya-reason p{font-size:.95rem;margin:0}
+.tasting-strip{display:grid;grid-template-columns:1.15fr repeat(3,1fr);gap:1px;margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--line)}
+.tasting-strip>div{padding:22px;background:#fff}
+.tasting-title{background:var(--ink)!important;color:#fff}.tasting-title span{display:block;margin-bottom:7px;color:#ff915c;font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.1em}
+.tasting-title strong{font-size:1.15rem}.taste-note small{display:block;min-height:42px;color:var(--muted);font-size:.75rem;line-height:1.4}.taste-note strong{display:block;margin-top:10px;font-size:1rem;line-height:1.3}
+@media(max-width:900px){.chiya-reasons{grid-template-columns:1fr}.tasting-strip{grid-template-columns:1fr 1fr}.tasting-title{grid-column:1/-1}}
+@media(max-width:560px){.hero-offer{max-width:none}.hero-offer>div{padding:14px}.hero-offer strong{font-size:1.55rem}.tasting-strip{grid-template-columns:1fr}.tasting-title{grid-column:auto}.taste-note small{min-height:0}.chiya-reason{padding:24px}}
