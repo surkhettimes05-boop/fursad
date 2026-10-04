@@ -13,20 +13,25 @@
   getConfig().then(function (config) {
     const whatsapp = String(config.whatsappNumber || '').replace(/\D/g, '');
     const businessEmail = String(config.businessEmail || '').trim();
-    const message = encodeURIComponent('Hi FURSAD, I would like to know more about the Crunchy Tea Cracker.');
+    const defaultMessage = 'नमस्ते FURSAD, FURSAD Crunchy Tea Cracker बारे जानकारी चाहन्छु।';
 
     document.querySelectorAll('[data-whatsapp]').forEach(function (link) {
+      const customMessage = String(link.getAttribute('data-whatsapp-message') || defaultMessage).trim();
       if (/^\d{8,15}$/.test(whatsapp)) {
-        link.href = 'https://wa.me/' + whatsapp + '?text=' + message;
+        link.href = 'https://wa.me/' + whatsapp + '?text=' + encodeURIComponent(customMessage);
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.removeAttribute('aria-disabled');
-        if (link.textContent.trim() === 'WhatsApp coming soon') link.textContent = 'Open WhatsApp';
+        link.removeAttribute('data-contact-fallback');
+        link.title = 'Open WhatsApp';
       } else {
-        link.removeAttribute('href');
+        const currentHref = link.getAttribute('href');
+        link.href = currentHref && currentHref !== '#' ? currentHref : '/contact/';
         link.removeAttribute('target');
-        link.setAttribute('aria-disabled', 'true');
-        link.title = 'WhatsApp number is not configured yet';
+        link.removeAttribute('rel');
+        link.removeAttribute('aria-disabled');
+        link.setAttribute('data-contact-fallback', 'true');
+        link.title = 'WhatsApp number is not configured yet; opening contact options.';
       }
     });
 
@@ -38,7 +43,7 @@
       } else {
         link.removeAttribute('href');
         link.setAttribute('aria-disabled', 'true');
-        link.textContent = 'Business email coming soon';
+        link.textContent = 'Business email not configured';
       }
     });
   });
